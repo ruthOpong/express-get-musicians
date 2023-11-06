@@ -7,7 +7,12 @@ const port = 3000;
 
 //TODO: Create a GET /musicians route to return all musicians 
 
+app.get('/musicians', async (req, res) => {
+    
+    const music = await Musician.findAll()
 
+    res.json(music);
+})
 
 
 
