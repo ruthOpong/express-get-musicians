@@ -17,8 +17,8 @@ describe('./musicians endpoint', () => {
     })
     
     test("Test data", async () => {
-        const response = await request(app).get("/Musicians/1");
-        const responseData = await JSON.parse(response.text);
-        expect(responseData).toBe('{"bandId": null, "createdAt": "2023-11-07T11:25:51.565Z", "id": 1, "instrument": "Voice", "name": "Mick Jagger", "updatedAt": "2023-11-07T11:25:51.565Z"}')
+        const response = await request(app).get("/users/1"); 
+        console.log(response.body);
+        expect(response.body).toEqual(["Johnny", "Andy", "Simon"])
     })
 })
